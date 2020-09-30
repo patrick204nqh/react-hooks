@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import peopleContext from '../context/peopleContext'
 
-const Form = ({ addPerson }) => {
+const Form = () => {
   const [person, setPerson] = useState({ firstName: '', lastName: '' })
+  const { addPerson } = useContext(peopleContext)
 
   const onChange = (e) => {
     setPerson({ ...person, [e.target.name]: e.target.value })
